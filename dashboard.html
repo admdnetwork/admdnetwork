@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Label Dashboard - ADMD NETWORK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #050505; }
+    </style>
+</head>
+<body class="text-gray-300 min-h-screen flex flex-col md:flex-row">
+
+    <!-- Sidebar -->
+    <aside class="w-full md:w-64 bg-[#0f0f12] border-r border-zinc-900 p-6 flex flex-col justify-between">
+        <div>
+            <div class="mb-8">
+                <span class="text-white font-extrabold text-xl tracking-tight">admd<span class="text-gray-400 font-light">network</span></span>
+                <p class="text-[10px] text-red-500 font-bold uppercase mt-1">Label Panel</p>
+            </div>
+            <nav class="space-y-2">
+                <a href="#" class="flex items-center space-x-3 bg-zinc-900 text-white p-3 rounded-xl text-xs font-semibold">
+                    <i class="fa-solid fa-gauge text-red-500"></i> <span>Overview</span>
+                </a>
+                <a href="#" onclick="alert('Music Catalog System Loading...')" class="flex items-center space-x-3 text-gray-400 hover:bg-zinc-900/50 hover:text-white p-3 rounded-xl text-xs font-semibold transition">
+                    <i class="fa-solid fa-music"></i> <span>My Releases</span>
+                </a>
+                <a href="#" onclick="alert('Analytics & ISRCs Syncing...')" class="flex items-center space-x-3 text-gray-400 hover:bg-zinc-900/50 hover:text-white p-3 rounded-xl text-xs font-semibold transition">
+                    <i class="fa-solid fa-chart-line"></i> <span>Analytics</span>
+                </a>
+                <a href="#" onclick="alert('Financial Reports Loading...')" class="flex items-center space-x-3 text-gray-400 hover:bg-zinc-900/50 hover:text-white p-3 rounded-xl text-xs font-semibold transition">
+                    <i class="fa-solid fa-wallet"></i> <span>Royalties</span>
+                </a>
+            </nav>
+        </div>
+        <div class="pt-6 border-t border-zinc-900">
+            <a href="index.html" class="flex items-center space-x-3 text-red-500 text-xs font-bold hover:underline">
+                <i class="fa-solid fa-right-from-bracket"></i> <span>Log Out</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow p-6 md:p-10 space-y-8 overflow-y-auto">
+        <!-- Header -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div>
+                <h1 class="text-2xl font-bold text-white tracking-tight">Welcome Back, Partner!</h1>
+                <p class="text-gray-500 text-xs">Manage your digital assets and folk catalogs.</p>
+            </div>
+            <button onclick="document.getElementById('uploadModal').classList.remove('hidden')" class="bg-[#ff1e1e] hover:bg-red-700 text-white font-bold text-xs px-5 py-3 rounded-xl shadow-lg flex items-center space-x-2 transition">
+                <i class="fa-solid fa-cloud-arrow-up"></i> <span>Distribute New Track</span>
+            </button>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div class="bg-[#0f0f12] border border-zinc-900 rounded-2xl p-6">
+                <p class="text-gray-500 text-xs font-medium uppercase tracking-wider">Total Distributed Songs</p>
+                <p class="text-2xl font-extrabold text-white mt-2">1,620</p>
+                <span class="text-green-500 text-[10px] font-bold"><i class="fa-solid fa-circle text-[6px] mr-1"></i> Global Live</span>
+            </div>
+            <div class="bg-[#0f0f12] border border-zinc-900 rounded-2xl p-6">
+                <p class="text-gray-500 text-xs font-medium uppercase tracking-wider">Total Streams (Current Month)</p>
+                <p class="text-2xl font-extrabold text-white mt-2">482.5K</p>
+                <span class="text-red-500 text-[10px] font-bold">+12% vs last month</span>
+            </div>
+            <div class="bg-[#0f0f12] border border-zinc-900 rounded-2xl p-6">
+                <p class="text-gray-500 text-xs font-medium uppercase tracking-wider">Estimated Earnings</p>
+                <p class="text-2xl font-extrabold text-green-500 mt-2">₹42,350.00</p>
+                <span class="text-gray-500 text-[10px]">Next payout: July 2026</span>
+            </div>
+        </div>
+
+        <!-- Recent Uploads Table -->
+        <div class="bg-[#0f0f12] border border-zinc-900 rounded-2xl p-6">
+            <h3 class="text-sm font-bold text-white mb-4">Recent Track Deliveries</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs">
+                    <thead>
+                        <tr class="border-b border-zinc-900 text-gray-500 uppercase font-semibold">
+                            <th class="pb-3">Title</th>
+                            <th class="pb-3">ISRC</th>
+                            <th class="pb-3">Platform Status</th>
+                            <th class="pb-3">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-zinc-900/50" id="trackTableBody">
+                        <tr>
+                            <td class="py-4 font-medium text-white flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-zinc-800 rounded flex items-center justify-center text-red-500"><i class="fa-solid fa-compact-disc animate-spin"></i></div>
+                                <span>Bhadu Folk Melodies Vol 1</span>
+                            </td>
+                            <td class="py-4 text-gray-400 font-mono">IN-A26-26-00124</td>
+                            <td class="py-4"><span class="bg-green-500/10 text-green-500 px-2 py-1 rounded text-[10px] font-bold">Live on Spotify/YT</span></td>
+                            <td class="py-4 text-gray-500"><a href="#" class="hover:text-white"><i class="fa-solid fa-ellipsis-vertical"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Simple Fake Upload Modal Box -->
+    <div id="uploadModal" class="fixed inset-0 bg-black/80 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-[#0f0f12] border border-zinc-900 rounded-2xl p-6 w-full max-w-md space-y-4">
+            <h3 class="text-base font-bold text-white">Metadata Submission</h3>
+            <input type="text" id="modalTrackTitle" placeholder="Song Title" class="w-full bg-[#050505] border border-zinc-800 rounded-lg p-3 text-xs text-white focus:outline-none focus:border-red-600">
+            <input type="text" id="modalArtist" placeholder="Singer / Producer" class="w-full bg-[#050505] border border-zinc-800 rounded-lg p-3 text-xs text-white focus:outline-none focus:border-red-600">
+            <div class="border border-dashed border-zinc-800 rounded-lg p-6 text-center text-xs text-gray-500 cursor-pointer hover:border-red-600 transition">
+                <i class="fa-solid fa-file-audio text-xl text-red-500 mb-2"></i> <br> Drag & Drop Audio (.wav format)
+            </div>
+            <div class="flex justify-end space-x-3 pt-2">
+                <button onclick="document.getElementById('uploadModal').classList.add('hidden')" class="text-xs text-gray-400 px-4 py-2 hover:text-white">Cancel</button>
+                <button onclick="submitFakeTrack()" class="bg-[#ff1e1e] text-white text-xs font-bold px-4 py-2 rounded-lg">Submit Code & Metadata</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitFakeTrack() {
+            const title = document.getElementById('modalTrackTitle').value;
+            if(!title) return alert('Please input track title!');
+            
+            const tbody = document.getElementById('trackTableBody');
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td class="py-4 font-medium text-white flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-zinc-800 rounded flex items-center justify-center text-amber-500"><i class="fa-solid fa-circle-notch animate-spin"></i></div>
+                    <span>${title}</span>
+                </td>
+                <td class="py-4 text-zinc-600 font-mono">Generating...</td>
+                <td class="py-4"><span class="bg-amber-500/10 text-amber-500 px-2 py-1 rounded text-[10px] font-bold">Reviewing by Admin</span></td>
+                <td class="py-4 text-gray-500"><i class="fa-solid fa-hourglass"></i></td>
+            `;
+            tbody.insertBefore(row, tbody.firstChild);
+            document.getElementById('uploadModal').classList.add('hidden');
+            alert('Success! Track sent to ANKITA DIGITAL Network admin approval queue.');
+        }
+    </script>
+</body>
+</html>
