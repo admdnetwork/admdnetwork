@@ -29,15 +29,15 @@
             <p class="text-gray-500 text-xs mt-1">Start distributing your music worldwide today</p>
         </div>
 
-        <!-- Form -->
-        <form class="space-y-4" onsubmit="event.preventDefault();">
+        <!-- Form (onsubmit রিমুভ করা হয়েছে যাতে নিচের স্ক্রিপ্ট কাজ করে) -->
+        <form id="signupForm" class="space-y-4">
             <div>
                 <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Full Name / Label Name</label>
                 <div class="relative">
                     <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600 text-xs">
                         <i class="fa-solid fa-user"></i>
                     </span>
-                    <input type="text" placeholder="John Doe or Music Label" class="w-full bg-[#080808] border border-zinc-800 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-600 transition placeholder:text-zinc-700" required>
+                    <input type="text" id="fullName" placeholder="John Doe or Music Label" class="w-full bg-[#080808] border border-zinc-800 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-600 transition placeholder:text-zinc-700" required>
                 </div>
             </div>
 
@@ -47,7 +47,7 @@
                     <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600 text-xs">
                         <i class="fa-solid fa-envelope"></i>
                     </span>
-                    <input type="email" placeholder="name@example.com" class="w-full bg-[#080808] border border-zinc-800 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-600 transition placeholder:text-zinc-700" required>
+                    <input type="email" id="email" placeholder="name@example.com" class="w-full bg-[#080808] border border-zinc-800 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-600 transition placeholder:text-zinc-700" required>
                 </div>
             </div>
 
@@ -57,7 +57,7 @@
                     <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600 text-xs">
                         <i class="fa-solid fa-lock"></i>
                     </span>
-                    <input type="password" placeholder="Minimum 8 characters" class="w-full bg-[#080808] border border-zinc-800 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-600 transition placeholder:text-zinc-700" required>
+                    <input type="password" id="password" placeholder="Minimum 8 characters" class="w-full bg-[#080808] border border-zinc-800 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-600 transition placeholder:text-zinc-700" required>
                 </div>
             </div>
 
@@ -81,5 +81,25 @@
 
     </div>
 
+<script>
+document.getElementById('signupForm').addEventListener('submit', function(e) {
+    e.preventDefault(); 
+
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // টেম্পোরারি লোকাল স্টোরেজে ডেটা সেভ করা হচ্ছে যাতে গিটহাব পেজে টেস্ট করা যায়
+    localStorage.setItem('user_name', fullName);
+    localStorage.setItem('user_email', email);
+    localStorage.setItem('user_pass', password);
+
+    // সফল মেসেজ দেখানো
+    alert('Account created successfully (Local Test Mode)!');
+    
+    // আপনার লগইন পেজে রিডাইরেক্ট করবে
+    window.location.href = 'login.html'; 
+});
+</script>
 </body>
 </html>
