@@ -9,14 +9,13 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #080808; }
     </style>
 </head>
 <body class="text-gray-300 min-h-screen flex items-center justify-center p-4 selection:bg-red-600 selection:text-white">
 
     <div class="w-full max-w-md bg-[#0f0f12] border border-zinc-900 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
-        
         <!-- Subtle Glow Effect -->
         <div class="absolute -top-10 -right-10 w-32 h-32 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
         
@@ -29,15 +28,15 @@
             <p class="text-gray-500 text-xs mt-1">Start distributing your music worldwide today</p>
         </div>
 
-        <!-- Form -->
-        <form class="space-y-4" onsubmit="event.preventDefault();">
+        <!-- Form with custom JavaScript Alert for testing -->
+        <form class="space-y-4" id="signupForm">
             <div>
                 <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Full Name / Label Name</label>
                 <div class="relative">
                     <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600 text-xs">
                         <i class="fa-solid fa-user"></i>
                     </span>
-                    <input type="text" placeholder="John Doe or Music Label" class="w-full bg-[#080808] border border-zinc-800 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-600 transition placeholder:text-zinc-700" required>
+                    <input type="text" id="fullName" placeholder="John Doe or Music Label" class="w-full bg-[#080808] border border-zinc-800 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-600 transition placeholder:text-zinc-700" required>
                 </div>
             </div>
 
@@ -78,8 +77,18 @@
         <div class="text-center mt-6 pt-5 border-t border-zinc-900/50">
             <p class="text-xs text-gray-500">Already have an account? <a href="login.html" class="text-white font-bold hover:underline">Sign In</a></p>
         </div>
-
     </div>
+
+    <!-- Simple Dynamic Logic to make it look active -->
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop default reload
+            const name = document.getElementById('fullName').value;
+            alert('Congratulations ' + name + '! Your ADMD Network distributor account has been initiated successfully. (Redirecting to Dashboard demo...)');
+            // Future Dashboard Link can go here
+            window.location.href = 'index.html'; 
+        });
+    </script>
 
 </body>
 </html>
