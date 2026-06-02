@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMD NETWORK - Digital Music Distribution</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080808;
+            scroll-behavior: smooth;
+        }
+        /* Custom Vinyl/Radar style subtle background pulse for Hero */
+        .hero-bg-circle {
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+        /* Accordion custom style toggle */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-block:hover .faq-answer, .faq-block:focus-within .faq-answer {
+            max-height: 100px;
+        }
+    </style>
+</head>
+<body class="text-gray-300 min-h-screen selection:bg-red-600 selection:text-white">
+
+    <!-- Navbar Navigation Menu -->
+    <header class="bg-[#080808]/90 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo Updated to ADMD NETWORK -->
+            <a href="#home" class="flex items-center space-x-2">
+                <span class="text-white font-extrabold text-2xl tracking-tight">admd<span class="text-gray-400 font-light">network</span></span>
+            </a>
+
+            <!-- Menu Layout -->
+            <nav class="hidden lg:flex items-center space-x-6 text-[13px] font-medium text-gray-400">
+                <a href="#home" class="hover:text-white transition">Home</a>
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#services" class="hover:text-white transition">Services</a>
+                <a href="#process" class="hover:text-white transition">Our Process</a>
+                <a href="#pricing" class="hover:text-white transition">Pricing</a>
+                <a href="#reviews" class="hover:text-white transition">Reviews</a>
+                <a href="#faq" class="hover:text-white transition">FAQ</a>
+                <a href="#contact" class="hover:text-white transition">Contact</a>
+            </nav>
+
+            <!-- Access Gate Button Layout -->
+            <div class="flex items-center space-x-3">
+                <a href="#login" class="bg-zinc-900 border border-zinc-800 text-white text-xs font-bold px-4 py-2 rounded flex items-center space-x-1 hover:bg-zinc-800 transition">
+                    <i class="fa-solid fa-right-to-bracket text-[10px] text-gray-400"></i>
+                    <span>Login</span>
+                </a>
+                <a href="#signup" class="bg-[#ff1e1e] text-white text-xs font-bold px-4 py-2 rounded flex items-center space-x-1 hover:bg-red-700 transition">
+                    <i class="fa-solid fa-user-plus text-[10px]"></i>
+                    <span>Sign Up</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Home / Hero Section -->
+    <section id="home" class="relative overflow-hidden bg-[#080808] min-h-[85vh] flex items-center justify-center pt-12 pb-20">
+        <!-- Circular Radar Background Layer -->
+        <div class="absolute inset-0 z-0 overflow-hidden flex items-center justify-center">
+            <div class="hero-bg-circle w-[300px] h-[300px]"></div>
+            <div class="hero-bg-circle w-[500px] h-[500px]"></div>
+            <div class="hero-bg-circle w-[700px] h-[700px]"></div>
+            <div class="hero-bg-circle w-[900px] h-[900px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-6">
+            <div class="text-xs font-bold uppercase tracking-[0.2em] text-red-500 bg-red-500/5 border border-red-500/10 inline-block px-4 py-1.5 rounded-full">
+                100% Free Music Distribution
+            </div>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1] max-w-3xl mx-auto">
+                Distribute Your Music <br>To The World
+            </h1>
+            <p class="text-gray-400 text-sm sm:text-lg font-normal max-w-xl mx-auto tracking-wide">
+                Reach Every Major Streaming Platform Worldwide
+            </p>
+            <div class="pt-4">
+                <a href="#signup" class="inline-flex items-center justify-center space-x-2 bg-white text-black font-bold text-sm px-8 py-3.5 rounded-full hover:bg-gray-200 transition shadow-lg">
+                    <span>Create Free Account</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Welcome / About Section -->
+    <section id="about" class="bg-[#080808] py-24 border-t border-zinc-900">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-extrabold text-white tracking-tight mb-3">Welcome to ADMD Network</h2>
+            <p class="text-gray-400 text-sm max-w-2xl mx-auto mb-16">
+                Empowering independent artists with professional music distribution tools, completely free of charge.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <!-- Box 1 -->
+                <div class="bg-[#0f0f12] border border-zinc-900 p-8 rounded-2xl">
+                    <div class="mb-6 h-44 overflow-hidden rounded-xl bg-zinc-950 flex items-center justify-center text-5xl text-gray-600">
+                        <i class="fa-solid fa-compact-disc animate-spin-slow"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Our Mission</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        We believe every artist deserves the opportunity to share their music with the world. That's why we've created a platform that removes financial barriers and provides professional-grade distribution services at zero cost.
+                    </p>
+                </div>
+                <!-- Box 2 -->
+                <div class="bg-[#0f0f12] border border-zinc-900 p-8 rounded-2xl">
+                    <div class="mb-6 h-44 overflow-hidden rounded-xl bg-zinc-950 flex items-center justify-center text-5xl text-gray-600">
+                        <i class="fa-solid fa-earth-asia"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Global Reach</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Distribute your music to 150+ streaming platforms including Spotify, Apple Music, Amazon Music, YouTube Music, and many more. Your music deserves to be heard everywhere.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Our Services & Platforms Grid -->
+    <section id="services" class="bg-[#0b0b0d] py-24 border-t border-b border-zinc-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-white tracking-tight mb-2">Our Services</h2>
+                <p class="text-gray-500 text-xs font-medium tracking-wider uppercase">Comprehensive music industry solutions for independent artists</p>
+            </div>
+
+            <!-- Full Distribution Nested Layout -->
+            <div class="bg-[#080808] border border-zinc-900 p-8 rounded-2xl mb-8">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="bg-zinc-900 w-8 h-8 rounded flex items-center justify-center text-sm text-gray-400 border border-zinc-800">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Music Distribution</h3>
+                </div>
+                <p class="text-gray-400 text-xs max-w-3xl mb-8 leading-relaxed">
+                    Get your music on all major streaming platforms worldwide. We handle the technical details while you focus on creating. Unlimited releases, unlimited songs, zero fees.
+                </p>
+                
+                <!-- Platforms Icons Display Array -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div class="bg-[#0f0f12] border border-zinc-900 p-4 rounded-xl text-center hover:border-zinc-700 transition">
+                        <i class="fa-brands fa-spotify text-green-500 text-xl mb-1"></i>
+                        <div class="text-[11px] font-semibold text-gray-300">Spotify</div>
+                    </div>
+                    <div class="bg-[#0f0f12] border border-zinc-900 p-4 rounded-xl text-center hover:border-zinc-700 transition">
+                        <i class="fa-brands fa-apple text-white text-xl mb-1"></i>
+                        <div class="text-[11px] font-semibold text-gray-300">Apple Music</div>
+                    </div>
+                    <div class="bg-[#0f0f12] border border-zinc-900 p-4 rounded-xl text-center hover:border-zinc-700 transition">
+                        <i class="fa-brands fa-amazon text-orange-400 text-xl mb-1"></i>
+                        <div class="text-[11px] font-semibold text-gray-300">Amazon Music</div>
+                    </div>
+                    <div class="bg-[#0f0f12] border border-zinc-900 p-4 rounded-xl text-center hover:border-zinc-700 transition">
+                        <i class="fa-brands fa-youtube text-red-600 text-xl mb-1"></i>
+                        <div class="text-[11px] font-semibold text-gray-300">YouTube Music</div>
+                    </div>
+                    <div class="bg-[#0f0f12] border border-zinc-900 p-4 rounded-xl text-center hover:border-zinc-700 transition">
+                        <i class="fa-brands fa-meta text-blue-500 text-xl mb-1"></i>
+                        <div class="text-[11px] font-semibold text-gray-300">Meta Music</div>
+                    </div>
+                    <div class="bg-[#0f0f12] border border-zinc-900 p-4 rounded-xl text-center hover:border-zinc-700 transition">
+                        <i class="fa-solid fa-plus text-gray-400 text-xl mb-1"></i>
+                        <div class="text-[11px] font-semibold text-gray-300">150+ Platforms</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Quad Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-[#080808] border border-zinc-900 p-6 rounded-2xl">
+                    <div class="bg-zinc-900 w-8 h-8 rounded flex items-center justify-center text-sm text-gray-400 border border-zinc-800 mb-4"><i class="fa-solid fa-user"></i></div>
+                    <h4 class="text-sm font-bold text-white mb-2">Artist Management</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Professional tools to manage your artist profile, releases, and presence across all platforms. Update your information, manage metadata, and control your brand identity.</p>
+                </div>
+                <div class="bg-[#080808] border border-zinc-900 p-6 rounded-2xl">
+                    <div class="bg-zinc-900 w-8 h-8 rounded flex items-center justify-center text-sm text-gray-400 border border-zinc-800 mb-4"><i class="fa-solid fa-tv"></i></div>
+                    <h4 class="text-sm font-bold text-white mb-2">Channel Management</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Seamlessly manage your YouTube artist channel and music content. Monetize your videos, claim your content, and maximize your YouTube presence.</p>
+                </div>
+                <div class="bg-[#080808] border border-zinc-900 p-6 rounded-2xl">
+                    <div class="bg-zinc-900 w-8 h-8 rounded flex items-center justify-center text-sm text-gray-400 border border-zinc-800 mb-4"><i class="fa-solid fa-folder-open"></i></div>
+                    <h4 class="text-sm font-bold text-white mb-2">Label Management</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Running your own label? Manage multiple artists, track releases, and oversee your entire roster from one powerful dashboard.</p>
+                </div>
+                <div class="bg-[#080808] border border-zinc-900 p-6 rounded-2xl">
+                    <div class="bg-zinc-900 w-8 h-8 rounded flex items-center justify-center text-sm text-gray-400 border border-zinc-800 mb-4"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h4 class="text-sm font-bold text-white mb-2">Reports & Analytics</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Comprehensive analytics and reporting. Track streams, downloads, revenue, and audience demographics across all platforms in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Why Choose Us Section -->
+    <section class="bg-[#080808] py-24">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-white tracking-tight mb-2">Why Choose ADMD Network?</h2>
+                <p class="text-gray-400 text-xs">We're different because we truly put artists first.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-2">
+                    <div class="text-red-500 text-xl"><i class="fa-solid fa-dollar-sign"></i></div>
+                    <h3 class="text-sm font-bold text-white">100% Free Forever</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">No hidden fees, no subscription costs, no catch. Distribute unlimited music to all platforms without spending a penny.</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-red-500 text-xl"><i class="fa-solid fa-percentage"></i></div>
+                    <h3 class="text-sm font-bold text-white">Keep 100% Royalties</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">You own your music, you keep your earnings. We don't take any commission from your hard-earned royalties.</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-red-500 text-xl"><i class="fa-solid fa-bolt"></i></div>
+                    <h3 class="text-sm font-bold text-white">Fast Delivery</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Your music goes live on all platforms within 24-48 hours. No long waiting periods or complicated approval processes.</p>
+                </div>
+                <div class="space-y-2 pt-4">
+                    <div class="text-red-500 text-xl"><i class="fa-solid fa-headset"></i></div>
+                    <h3 class="text-sm font-bold text-white">24/7 Support</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Our dedicated support team is available around the clock to help you with any questions or issues.</p>
+                </div>
+                <div class="space-y-2 pt-4">
+                    <div class="text-red-500 text-xl"><i class="fa-solid fa-shield"></i></div>
+                    <h3 class="text-sm font-bold text-white">Content Protection</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Advanced copyright protection and Content ID management to ensure your music is protected across all platforms.</p>
+                </div>
+                <div class="space-y-2 pt-4">
+                    <div class="text-red-500 text-xl"><i class="fa-solid fa-infinity"></i></div>
+                    <h3 class="text-sm font-bold text-white">Unlimited Releases</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Release as much music as you want. Singles, EPs, albums - there is no limit to your creativity or distribution.</p>
+                </div>
+            </div>
+
+            <!-- Mini Counter Grid Block -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-20 border-t border-zinc-900 pt-12 text-center">
+                <div>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-white">150+</div>
+                    <div class="text-[10px] text-gray-500 font-semibold uppercase tracking-wider mt-1">Streaming Platforms</div>
+                </div>
+                <div>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-white">10K+</div>
+                    <div class="text-[10px] text-gray-500 font-semibold uppercase tracking-wider mt-1">Active Artists</div>
+                </div>
+                <div>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-white">50K+</div>
+                    <div class="text-[10px] text-gray-500 font-semibold uppercase tracking-wider mt-1">Songs Distributed</div>
+                </div>
+                <div>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-white">100%</div>
+                    <div class="text-[10px] text-gray-500 font-semibold uppercase tracking-wider mt-1">Free Forever</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Our Process Section -->
+    <section id="process" class="bg-[#0b0b0d] py-24 border-t border-b border-zinc-900">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-white tracking-tight mb-2">How It Works</h2>
+                <p class="text-gray-400 text-xs">Get your music online in 4 simple steps</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <div class="space-y-3">
+                    <div class="text-2xl font-extrabold text-zinc-800 border-b border-zinc-900 pb-2">1</div>
+                    <h3 class="text-sm font-bold text-white">Create Account</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Sign up for free in under 2 minutes. No credit card required.</p>
+                </div>
+                <div class="space-y-3">
+                    <div class="text-2xl font-extrabold text-zinc-800 border-b border-zinc-900 pb-2">2</div>
+                    <h3 class="text-sm font-bold text-white">Upload Music</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Upload your tracks and artwork, add metadata and release details.</p>
+                </div>
+                <div class="space-y-3">
+                    <div class="text-2xl font-extrabold text-zinc-800 border-b border-zinc-900 pb-2">3</div>
+                    <h3 class="text-sm font-bold text-white">Select Platforms</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Choose which streaming services you want your music on.</p>
+                </div>
+                <div class="space-y-3">
+                    <div class="text-2xl font-extrabold text-zinc-800 border-b border-zinc-900 pb-2">4</div>
+                    <h3 class="text-sm font-bold text-white">Go Live</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Your music goes live worldwide within 24-48 hours.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#signup" class="inline-flex items-center space-x-2 bg-zinc-900 text-white border border-zinc-800 font-bold text-xs px-6 py-3 rounded-md hover:bg-zinc-800 transition">
+                    <span>Start Distributing Now</span>
+                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Pricing Section -->
+    <section id="pricing" class="bg-[#080808] py-24 px-4">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">Simple, Transparent Pricing</h2>
+            <p class="text-gray-400 text-xs mb-14">The best price in the industry - absolutely free!</p>
+
+            <div class="max-w-md mx-auto bg-[#0f0f12] border border-zinc-900 rounded-[24px] pt-12 pb-10 px-6 sm:px-10 shadow-2xl">
+                <h3 class="text-lg font-bold text-white tracking-wide">Free Forever Plan</h3>
+                <div class="text-6xl font-extrabold text-white my-6 tracking-tighter">$0</div>
+                <p class="text-gray-500 text-xs mb-10">No hidden fees, ever</p>
+
+                <ul class="text-left space-y-4 text-[12px] font-medium text-gray-300 border-t border-zinc-900 pt-8 mb-10">
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-solid fa-check text-zinc-500"></i>
+                        <span>Unlimited music distribution</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-solid fa-check text-zinc-500"></i>
+                        <span>150+ streaming platforms</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-solid fa-check text-zinc-500"></i>
+                        <span>Keep 100% of your royalties</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-solid fa-check text-zinc-500"></i>
+                        <span>Advanced analytics dashboard</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-solid fa-check text-zinc-500"></i>
+                        <span>YouTube Content ID</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-solid fa-check text-zinc-500"></i>
+                        <span>Spotify for Artists verification</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-solid fa-check text-zinc-500"></i>
+                        <span>Release scheduling</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-solid fa-check text-zinc-500"></i>
+                        <span>24/7 customer support</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fa-solid fa-check text-zinc-500"></i>
+                        <span>No expiration date on releases</span>
+                    </li>
+                </ul>
+
+                <a href="#signup" class="inline-flex items-center justify-center space-x-2 bg-white text-black font-bold text-xs px-8 py-3 rounded-full w-full hover:bg-gray-200 transition">
+                    <span>Get Started Free</span>
+                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Powerful Features Octa Grid Block -->
+    <section class="bg-[#0b0b0d] py-24 border-t border-b border-zinc-900">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-white tracking-tight mb-2">Powerful Features</h2>
+                <p class="text-gray-400 text-xs">Everything you need to succeed as an independent artist</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-[#080808] border border-zinc-900 p-5 rounded-xl">
+                    <div class="text-gray-500 text-lg mb-3"><i class="fa-solid fa-calendar-days"></i></div>
+                    <h3 class="text-xs font-bold text-white mb-1">Release Scheduling</h3>
+                    <p class="text-gray-400 text-[11px] leading-relaxed">Plan and schedule your releases in advance for perfect timing.</p>
+                </div>
+                <div class="bg-[#080808] border border-zinc-900 p-5 rounded-xl">
+                    <div class="text-gray-500 text-lg mb-3"><i class="fa-solid fa-barcode"></i></div>
+                    <h3 class="text-xs font-bold text-white mb-1">ISRC & UPC Codes</h3>
+                    <p class="text-gray-400 text-[11px] leading-relaxed">Free ISRC and UPC codes for all your releases.</p>
+                </div>
+                <div class="bg-[#080808] border border-zinc-900 p-5 rounded-xl">
+                    <div class="text-gray-500 text-lg mb-3"><i class="fa-solid fa-pen-to-square"></i></div>
+                    <h3 class="text-xs font-bold text-white mb-1">Easy Metadata Editing</h3>
+                    <p class="text-gray-400 text-[11px] leading-relaxed">Update track info, artwork, and details anytime.</p>
+                </div>
+                <div class="bg-[#080808] border border-zinc-900 p-5 rounded-xl">
+                    <div class="text-gray-500 text-lg mb-3"><i class="fa-solid fa-rotate"></i></div>
+                    <h3 class="text-xs font-bold text-white mb-1">Automatic Updates</h3>
+                    <p class="text-gray-400 text-[11px] leading-relaxed">Changes sync across all platforms automatically.</p>
+                </div>
+                <div class="bg-[#080808] border border-zinc-900 p-5 rounded-xl">
+                    <div class="text-gray-500 text-lg mb-3"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <h3 class="text-xs font-bold text-white mb-1">Mobile App</h3>
+                    <p class="text-gray-400 text-[11px] leading-relaxed">Manage your music on the go with our mobile app.</p>
+                </div>
+                <div class="bg-[#080808] border border-zinc-900 p-5 rounded-xl">
+                    <div class="text-gray-500 text-lg mb-3"><i class="fa-solid fa-circle-check"></i></div>
+                    <h3 class="text-xs font-bold text-white mb-1">Artist Verification</h3>
+                    <p class="text-gray-400 text-[11px] leading-relaxed">Get verified on Spotify and other major platforms.</p>
+                </div>
+                <div class="bg-[#080808] border border-zinc-900 p-5 rounded-xl">
+                    <div class="text-gray-500 text-lg mb-3"><i class="fa-solid fa-link"></i></div>
+                    <h3 class="text-xs font-bold text-white mb-1">Smart Links</h3>
+                    <p class="text-gray-400 text-[11px] leading-relaxed">Share one link that directs fans to all platforms.</p>
+                </div>
+                <div class="bg-[#080808] border border-zinc-900 p-5 rounded-xl">
+                    <div class="text-gray-500 text-lg mb-3"><i class="fa-solid fa-lock"></i></div>
+                    <h3 class="text-xs font-bold text-white mb-1">Copyright Protection</h3>
+                    <p class="text-gray-400 text-[11px] leading-relaxed">Protect your music with Content ID and copyright tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Reviews / What Artists Say Section -->
+    <section id="reviews" class="bg-[#080808] py-24">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-white tracking-tight mb-2">What Artists Say</h2>
+                <p class="text-gray-400 text-xs">Trusted by thousands of independent artists worldwide</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-[#0f0f12] border border-zinc-900 p-6 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 space-x-1 mb-4 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-xs leading-relaxed italic">"ADMD Network changed my life! I never thought I could afford music distribution. Now my songs are on Spotify and I'm getting streams from around the world!"</p>
+                    </div>
+                    <div class="mt-6 border-t border-zinc-900 pt-4">
+                        <h4 class="text-xs font-bold text-white">Sarah Mitchell</h4>
+                        <span class="text-[10px] text-gray-500">Independent Singer-Songwriter</span>
+                    </div>
+                </div>
+
+                <div class="bg-[#0f0f12] border border-zinc-900 p-6 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 space-x-1 mb-4 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-xs leading-relaxed italic">"The analytics dashboard is incredible. I can see exactly where my listeners are and which songs perform best. Plus, it's completely free!"</p>
+                    </div>
+                    <div class="mt-6 border-t border-zinc-900 pt-4">
+                        <h4 class="text-xs font-bold text-white">Marcus Rodriguez</h4>
+                        <span class="text-[10px] text-gray-500">Hip Hop Producer</span>
+                    </div>
+                </div>
+
+                <div class="bg-[#0f0f12] border border-zinc-900 p-6 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 space-x-1 mb-4 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-xs leading-relaxed italic">"Fast delivery, excellent support, and zero cost. I've distributed 12 tracks so far and every experience has been smooth. Highly recommend!"</p>
+                    </div>
+                    <div class="mt-6 border-t border-zinc-900 pt-4">
+                        <h4 class="text-xs font-bold text-white">Emily Chen</h4>
+                        <span class="text-[10px] text-gray-500">Electronic Music Artist</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FAQ Accordions Section -->
+    <section id="faq" class="bg-[#0b0b0d] py-24 border-t border-b border-zinc-900">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-white tracking-tight mb-2">Frequently Asked Questions</h2>
+                <p class="text-gray-400 text-xs">Everything you need to know about our service</p>
+            </div>
+
+            <!-- Interactivity via simple CSS selectors -->
+            <div class="space-y-3">
+                <div class="faq-block bg-[#080808] border border-zinc-900 rounded-xl p-5 focus-within:border-zinc-700 outline-none tab-index='0'">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <h3 class="text-xs font-bold text-white">Is ADMD Network really 100% free?</h3>
+                        <i class="fa-solid fa-chevron-down text-xs text-gray-500"></i>
+                    </div>
+                    <div class="faq-answer mt-3">
+                        <p class="text-gray-400 text-[11px] leading-relaxed">Yes, absolutely. We do not charge anything for uploading, distributing, or maintaining your music catalogs across streaming services.</p>
+                    </div>
+                </div>
+
+                <div class="faq-block bg-[#080808] border border-zinc-900 rounded-xl p-5 focus-within:border-zinc-700 outline-none tab-index='0'">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <h3 class="text-xs font-bold text-white">How long does it take for my music to go live?</h3>
+                        <i class="fa-solid fa-chevron-down text-xs text-gray-500"></i>
+                    </div>
+                    <div class="faq-answer mt-3">
+                        <p class="text-gray-400 text-[11px] leading-relaxed">Most processing deliveries are completed, sent, and visible inside stores within 24 to 48 hours depending on store ingestion lines.</p>
+                    </div>
+                </div>
+
+                <div class="faq-block bg-[#080808] border border-zinc-900 rounded-xl p-5 focus-within:border-zinc-700 outline-none tab-index='0'">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <h3 class="text-xs font-bold text-white">Which platforms do you distribute to?</h3>
+                        <i class="fa-solid fa-chevron-down text-xs text-gray-500"></i>
+                    </div>
+                    <div class="faq-answer mt-3">
+                        <p class="text-gray-400 text-[11px] leading-relaxed">We sync with over 150 digital music outlets, including major international stores and top regional streaming applications.</p>
+                    </div>
+                </div>
+
+                <div class="faq-block bg-[#080808] border border-zinc-900 rounded-xl p-5 focus-within:border-zinc-700 outline-none tab-index='0'">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <h3 class="text-xs font-bold text-white">Do I own my music?</h3>
+                        <i class="fa-solid fa-chevron-down text-xs text-gray-500"></i>
+                    </div>
+                    <div class="faq-answer mt-3">
+                        <p class="text-gray-400 text-[11px] leading-relaxed">Yes. You retain 100% complete ownership of your music, copyrights, and master controls at all times.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Call to Action & Contact Information -->
+    <section id="contact" class="bg-[#080808] py-24">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-extrabold text-white tracking-tight mb-3">Ready to Share Your Music?</h2>
+            <p class="text-gray-400 text-xs max-w-xl mx-auto mb-6">Join thousands of artists who trust ADMD Network for their music distribution.</p>
+            
+            <a href="#signup" class="inline-flex items-center justify-center bg-white text-black font-bold text-xs px-6 py-3 rounded-md hover:bg-gray-200 transition mb-2">
+                <span>Create Free Account</span>
+            </a>
+            <p class="text-gray-600 text-[10px] tracking-wide mb-16">No credit card required • Setup in 2 minutes • Start distributing today</p>
+
+            <!-- Bottom Three-Column Support Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left border-t border-zinc-900 pt-16">
+                <div class="bg-[#0f0f12] border border-zinc-900 p-6 rounded-xl flex items-start space-x-4">
+                    <div class="text-gray-400 text-lg mt-1"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white mb-1">Email Us</h4>
+                        <p class="text-gray-400 text-[11px]">support@admdnetwork.com</p>
+                    </div>
+                </div>
+                <div class="bg-[#0f0f12] border border-zinc-900 p-6 rounded-xl flex items-start space-x-4">
+                    <div class="text-gray-400 text-lg mt-1"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white mb-1">Call Us</h4>
+                        <p class="text-gray-400 text-[11px]">+91 7718249970</p>
+                    </div>
+                </div>
+                <div class="bg-[#0f0f12] border border-zinc-900 p-6 rounded-xl flex items-start space-x-4">
+                    <div class="text-gray-400 text-lg mt-1"><i class="fa-solid fa-comments"></i></div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white mb-1">Live Chat</h4>
+                        <p class="text-gray-400 text-[11px]">Available 24/7 for support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Updated to ADMD NETWORK -->
+    <footer class="bg-[#050507] border-t border-zinc-900 py-12 text-center">
+        <div class="max-w-5xl mx-auto px-6 space-y-4">
+            <span class="text-white font-extrabold text-xl tracking-tight block">admd<span class="text-gray-500 font-light">network</span></span>
+            <p class="text-gray-500 text-[11px] max-w-lg mx-auto">Empowering independent artists with free, professional music distribution tools to over 150 platforms globally.</p>
+            
+            <!-- Social Icons Row -->
+            <div class="flex justify-center space-x-4 text-gray-500 text-xs pt-2">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+
+            <div class="text-[10px] text-zinc-600 pt-6 border-t border-zinc-900/50">
+                &copy; 2026 ADMD NETWORK. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
