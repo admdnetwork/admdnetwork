@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - ADMD NETWORK</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #080808; }
+    </style>
+</head>
+<body class="text-gray-300 min-h-screen flex items-center justify-center p-4 selection:bg-red-600 selection:text-white">
+
+    <div class="w-full max-w-md bg-[#0f0f12] border border-zinc-900 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+        
+        <!-- Subtle Glow Effect -->
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <!-- Brand Logo -->
+        <div class="text-center mb-6">
+            <a href="index.html" class="inline-block mb-3">
+                <span class="text-white font-extrabold text-2xl tracking-tight">admd<span class="text-gray-400 font-light">network</span></span>
+            </a>
+            <h2 class="text-xl font-bold text-white tracking-tight">Create Free Account</h2>
+            <p class="text-gray-500 text-xs mt-1">Start distributing your music worldwide today</p>
+        </div>
+
+        <!-- Form -->
+        <form class="space-y-4" onsubmit="event.preventDefault();">
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Full Name / Label Name</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600 text-xs">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <input type="text" placeholder="John Doe or Music Label" class="w-full bg-[#080808] border border-zinc-800 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-600 transition placeholder:text-zinc-700" required>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Email Address</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600 text-xs">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                    <input type="email" placeholder="name@example.com" class="w-full bg-[#080808] border border-zinc-800 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-600 transition placeholder:text-zinc-700" required>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Create Password</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600 text-xs">
+                        <i class="fa-solid fa-lock"></i>
+                    </span>
+                    <input type="password" placeholder="Minimum 8 characters" class="w-full bg-[#080808] border border-zinc-800 rounded-lg pl-9 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-red-600 transition placeholder:text-zinc-700" required>
+                </div>
+            </div>
+
+            <div class="flex items-start pt-1">
+                <input id="terms" type="checkbox" class="mt-0.5 w-3.5 h-3.5 bg-[#080808] border border-zinc-800 rounded text-red-600 focus:ring-0 focus:ring-offset-0 accent-red-600 cursor-pointer" required>
+                <label for="terms" class="ml-2 text-xs font-medium text-gray-500 select-none cursor-pointer leading-tight">
+                    I agree to the <a href="#" class="text-gray-300 hover:underline">Terms of Service</a> and <a href="#" class="text-gray-300 hover:underline">Privacy Policy</a>
+                </label>
+            </div>
+
+            <button type="submit" class="w-full bg-[#ff1e1e] text-white font-bold text-xs py-3 rounded-lg hover:bg-red-700 transition flex items-center justify-center space-x-2 shadow-lg mt-2">
+                <span>Create Account</span>
+                <i class="fa-solid fa-user-plus text-[10px]"></i>
+            </button>
+        </form>
+
+        <!-- Footer link -->
+        <div class="text-center mt-6 pt-5 border-t border-zinc-900/50">
+            <p class="text-xs text-gray-500">Already have an account? <a href="login.html" class="text-white font-bold hover:underline">Sign In</a></p>
+        </div>
+
+    </div>
+
+</body>
+</html>
